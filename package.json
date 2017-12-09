@@ -6,16 +6,24 @@
   "scripts": {
     "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lite": "lite-server"
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/",
+    "parallelshell": "parallelshell",
+    "watch:scss": "onchange 'css/*.scss' -- npm run scss",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.2.2"
+    "less": "2.7.3",
+    "lite-server": "^2.2.2",
+    "node-sass": "^4.7.2",
+    "onchange": "^3.2.1",
+    "parallelshell": "^3.0.2"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
-	"less": "2.7.3"
+    "confusion": "^0.1.1"
   }
 }
